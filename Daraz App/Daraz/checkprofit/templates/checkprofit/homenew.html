@@ -1,0 +1,44 @@
+{% extends 'checkprofit/base.html'%}
+{% load static %}
+{%block content%}
+<div class="container">
+    <form class="row g-3 m-5 row justify-content-md-center" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class=" p5 mt-3">
+    
+            <div class="mb-3">
+                <label for="formFile m-5" class="form-label">Upload Daraz file here</label>
+                <input class="form-control" type="file" name="document">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3">Upload</button>
+            </div>
+        </div>
+    </form>
+    
+
+</div>
+<div class="container container-expand m-5">
+    <p class="h2 mb-2">How to get File From Daraz</p>
+    <div class="embed-responsive embed-responsive-21by9">
+        <iframe class="embed-responsive-item" src="{% static 'checkprofit/Daraz Video.gif' %}" allowfullscreen></iframe>
+      </div>
+</div>
+<hr>
+
+<div class="d-flex container m-5">
+    <div class="container">
+        <p class="h2 mb-2">Steps to get File From Daraz</p>
+        <img src="{% static 'checkprofit/page.jpg' %}" class="img-thumbnail" alt="Max-width 100%">
+      </div>
+      
+  
+</div>
+
+
+
+
+
+
+
+{%endblock content%}

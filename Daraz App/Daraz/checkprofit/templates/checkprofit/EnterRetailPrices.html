@@ -1,0 +1,38 @@
+{% extends 'checkprofit/base.html'%}
+
+{% load static %}
+{%block content%}
+<form  method="POST"  action="">
+    {% csrf_token %}
+        <div class="m-5 ">
+            <p class="h3">Enter Retail Prices of your SKU</p>
+            <hr>
+            <div class="alert alert-info" role="alert">
+                Kindly enter Numbers only For Example 210
+              </div>
+            
+                {%for a in uniqueSKU %}
+                    <p class="ml-5">{{a}}</p> 
+                    <input class="ml-5" type="text" name="{{a}}" >
+                    <hr>
+
+                {%endfor%}
+                <div class="col-auto m-3">
+                    <button type="submit" class="btn btn-primary mb-3 ml-5">Submit</button>
+                </div>
+
+            
+
+        </div>
+</form>
+<hr>
+
+<div class="d-flex container ml-51 ">
+    <div class="container">
+        <p class="h2 mb-2">How to get Product SKU Name</p>
+        <img src="{% static 'checkprofit/SKU.png' %}" class="w-70 img-thumbnail border border-secondary" alt="Max-width 70%">
+      </div>
+      
+  
+</div>
+{%endblock content%}
